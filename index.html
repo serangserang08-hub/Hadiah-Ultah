@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Untukmu yang Spesial ❤️</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Sedikit gaya untuk overlay "tap to play" */
+    #tap-overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(2,6,23,0.35);
+      color: white;
+      font-size: 1.1rem;
+      z-index: 60;
+      backdrop-filter: blur(4px);
+    }
+    #tap-overlay.hidden { display: none; }
+    /* agar konten tidak tergeser saat overlay */
+    body.noscroll { overflow: hidden; }
+  </style>
+</head>
+<body class="bg-blue-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white text-center py-6 shadow-lg">
+    <h1 class="text-3xl md:text-4xl font-bold">Selamat Ulang Tahun, Mylove 🎉❤️</h1>
+    <p class="mt-2 text-lg">Sebuah hadiah kecil dari hati untukmu</p>
+  </header>
+
+  <!-- invisible video trick + audio element -->
+  <video id="bg-video" playsinline autoplay loop muted style="display:none;"></video>
+
+  <!-- fallback audio element (actual audio source) -->
+  <audio id="bg-audio" preload="auto" loop>
+    <source src="static/media/music.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>
+
+  <!-- Konten utama -->
+  <main class="max-w-5xl mx-auto py-10 px-4">
+    <div class="space-y-10">
+
+      <!-- Item contoh 1: dengan gambar -->
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden transition transform hover:scale-105">
+        <img src="static/img/foto1.jpg" alt="Foto" class="w-full md:w-1/2 h-72 object-cover">
+        <div class="p-6 md:w-1/2">
+          <p class="text-base md:text-lg leading-relaxed">Selamat ulang tahun, Mylove ❤️. Hari ini adalah Honey pe hari spesial. Setiap hari kita bersyukur karena boleh bakudapa deng Honey. Semoga kedepannya, setiap mimpi yang Honey ingin capai bisa tercapai, semoga Honey selalu dipenuhi dengan semangat untuk terus melangkah meski banyak rintangan.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden transition transform hover:scale-105">
+        <img src="static/img/foto2.jpg" alt="Foto" class="w-full md:w-1/2 h-72 object-cover">
+        <div class="p-6 md:w-1/2">
+          <p class="text-base md:text-lg leading-relaxed">Kita tau belakangan ini Honey pasti merasa banyak beban. Mulai dari mo cari pekerjaan, menghadapi situasi keluarga yang beking saki hati, berjuang di tengah kondisi ekonomi yang sulit. Tapi kita suka Honey tau bahwa: Honey nda pernah sendiri. Ada Kita di sini for Honey, mo dengar Honey pe cerita, mo dukung setiap Honey pe usaha, deng mo genggam Honey pe tangan saat Honey merasa rapuh.</p>
+        </div>
+      </div>
+
+      <!-- Item contoh 2: dengan video -->
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden transition transform hover:scale-105">
+        <video controls autoplay loop muted class="w-full md:w-1/2 h-72 object-cover">
+          <source src="static/vidio/vidio1.mp4" type="video/mp4">
+          Browser kamu tidak mendukung video.
+        </video>
+        <div class="p-6 md:w-1/2">
+          <p class="text-base md:text-lg leading-relaxed">Honey, kita percaya dengan Honey pe kemampuan. Honey ada potensi besar yang mungkin kadang Honey sendiri lupa. Jangan pernah ragu deng Honey pe diri sendiri. Dunia ini luas, kesempatan banyak, dan kita yakin Tuhan sedang menyiapkan jalan terbaik for Honey. Semoga Honey pe doa-doa segera dijawab.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden transition transform hover:scale-105">
+        <img src="static/img/foto3.jpg" alt="Foto" class="w-full md:w-1/2 h-72 object-cover">
+        <div class="p-6 md:w-1/2">
+          <p class="text-base md:text-lg leading-relaxed">Tentang pekerjaan, jangan pernah kehilangan harapan neh honey. Kita yakin akan ada kesempatan yang besar for honey. Jangan tako gagal, karena setiap kegagalan adalah batu loncatan menuju sesuatu yang lebih baik. Honey hanya butuh sedikit waktu, dan kita percaya momen itu akan segera datang.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden transition transform hover:scale-105">
+        <img src="static/img/foto4.jpg" alt="Foto" class="w-full md:w-1/2 h-72 object-cover">
+        <div class="p-6 md:w-1/2">
+          <p class="text-base md:text-lg leading-relaxed">Kita, sayang pa Honey apapun Honey pe kondisi, bagaimanapun itu. karena kita sayang pa honey tanpa syarat. Maaf kalau kita banyak kurang, nda sama dengan Honey pe mantan mantan sebelumnya yang lebih baik dari kita.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden transition transform hover:scale-105">
+        <video controls autoplay loop muted class="w-full md:w-1/2 h-72 object-cover">
+          <source src="static/vidio/vidio2.mp4" type="video/mp4">
+          Browser kamu tidak mendukung video.
+        </video>
+        <div class="p-6 md:w-1/2">
+          <p class="text-base md:text-lg leading-relaxed">Setiap hari kita belajar banyak : tentang sabar, tentang bertahan, dan tentang berjuang. karena cuman Honey yang ingin kita ajak banyak hal bersama-sama. cuman Honey yang kita mau nda ada yang lain.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden transition transform hover:scale-105">
+        <video controls autoplay loop muted class="w-full md:w-1/2 h-72 object-cover">
+          <source src="static/vidio/vidio3.mp4" type="video/mp4">
+          Browser kamu tidak mendukung video.
+        </video>
+        <div class="p-6 md:w-1/2">
+          <p class="text-base md:text-lg leading-relaxed">Kita mau torang 2 basama-sama trus, melangkah bersama-sama. Susah senang tong dua hadapi sama-sama. Kita tau perjalanan kedepan pasti nda akan pernah mudah, tapi kita yaking torang dua boleh mo lalui selama torang dua saling menopang. Kita mau selalu ada di sisi pa Honey, sampai kapanpun itu.</p>
+        </div>
+      </div>
+
+            <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden transition transform hover:scale-105">
+        <img src="static/img/foto5.jpg" alt="Foto" class="w-full md:w-1/2 h-72 object-cover">
+        <div class="p-6 md:w-1/2">
+          <p class="text-base md:text-lg leading-relaxed">Pa Honey pe ulang tahun ini, kita berdoa semoga Honey selalu sehat, dijauhkan dari rasa putus asa, dan selalu diberikan kekuatan hati. Semoga setiap Honey pe langkahmu dipenuhi berkat, setiap Honey pe keputusan dilancarkan, dan setiap Honey pe mimpi semakin dekat menjadi nyata.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden transition transform hover:scale-105">
+        <img src="static/img/foto6.jpg" alt="Foto" class="w-full md:w-1/2 h-72 object-cover">
+        <div class="p-6 md:w-1/2">
+          <p class="text-base md:text-lg leading-relaxed">Ingat, Mylove… Honey nda perlu merubah apapun untuk jadi berharga. Honey so berharga apa adanya. Kita mencintai semua hal tetang Honey: Honey pe senyum, Honey pe cerita, bahkan waktu Honey manangis. Kita ingin jadi orang yang selalu berdiri disamping pa Honey apapun yang terjadi.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden transition transform hover:scale-105">
+        <video controls autoplay loop muted class="w-full md:w-1/2 h-72 object-cover">
+          <source src="static/vidio/vidio4.mp4" type="video/mp4">
+          Browser kamu tidak mendukung video.
+        </video>
+        <div class="p-6 md:w-1/2">
+          <p class="text-base md:text-lg leading-relaxed">Semoga tahun ini jadi awal yang indah for Honey. Semoga Honey menemukan kedamaian, kebahagiaan, dan keberanian untuk terus mengejar mimpi. Kita akan selalu mendukung Honey, dari hal-hal kecil sampai yang besar sekalipun.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden transition transform hover:scale-105">
+        <img src="static/img/foto7.jpg" alt="Foto" class="w-full md:w-1/2 h-72 object-cover">
+        <div class="p-6 md:w-1/2">
+          <p class="text-base md:text-lg leading-relaxed">Dan terakhir, terima kasih sudah menjadi bagian dari kita pe hidop. Honey adalah hadiah terindah yang pernah kita dapa. Kita bangga pa Honey, Kita bersyukur memiliki pa Honey, dan kita mencintai Honey lebih dari yang bisa Kita ungkapkan dengan kata-kata. ❤️</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-blue-600 text-white text-center py-4 mt-10">
+    <p>Dibuat dengan penuh cinta ❤️ oleh pacarmu</p>
+    <p class="italic">*maaf kalau alay hehe 🙏</p>
+  </footer>
+
+  <!-- Overlay kecil yang muncul HANYA jika autoplay gagal; akan hilang otomatis bila audio berhasil -->
+  <div id="tap-overlay" class="hidden">
+    <div class="text-center p-6">
+      <p class="mb-4 text-xl font-semibold">Sentuh layar untuk memutar musik 🎶</p>
+      <button id="tap-play" class="bg-white text-blue-600 px-5 py-2 rounded-lg font-medium shadow">Putar Lagu</button>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const audio = document.getElementById('bg-audio');
+      const video = document.getElementById('bg-video');
+      const overlay = document.getElementById('tap-overlay');
+      const tapBtn = document.getElementById('tap-play');
+
+      async function fetchAndPlayAudio() {
+        try {
+          audio.muted = false;
+          audio.volume = 1.0;
+          await audio.play();
+          hideOverlay();
+          return true;
+        } catch (err) {
+          console.warn('audio.play() gagal:', err);
+        }
+
+        try {
+          const ac = new (window.AudioContext || window.webkitAudioContext)();
+          if (ac.state === 'suspended') {
+            try { await ac.resume(); } catch(e) {}
+          }
+          const resp = await fetch('static/media/music.mp3');
+          const arrbuf = await resp.arrayBuffer();
+          const decoded = await ac.decodeAudioData(arrbuf);
+          const src = ac.createBufferSource();
+          src.buffer = decoded;
+          src.connect(ac.destination);
+          src.loop = true;
+          src.start(0);
+          hideOverlay();
+          return true;
+        } catch (err) {
+          console.warn('WebAudio fallback gagal:', err);
+        }
+
+        showOverlay();
+        return false;
+      }
+
+      function showOverlay(){
+        overlay.classList.remove('hidden');
+        document.body.classList.add('noscroll');
+      }
+      function hideOverlay(){
+        overlay.classList.add('hidden');
+        document.body.classList.remove('noscroll');
+      }
+
+      fetchAndPlayAudio();
+
+      tapBtn.addEventListener('click', async () => {
+        try {
+          audio.muted = false;
+          audio.volume = 1.0;
+          await audio.play();
+          hideOverlay();
+        } catch (err) {
+          try {
+            const ac = new (window.AudioContext || window.webkitAudioContext)();
+            await ac.resume();
+            const resp = await fetch('static/media/music.mp3');
+            const arrbuf = await resp.arrayBuffer();
+            const decoded = await ac.decodeAudioData(arrbuf);
+            const src = ac.createBufferSource();
+            src.buffer = decoded;
+            src.connect(ac.destination);
+            src.loop = true;
+            src.start(0);
+            hideOverlay();
+          } catch(e) {
+            alert('Maaf, browser tidak mengizinkan pemutaran otomatis.');
+          }
+        }
+      });
+
+      ['click','touchstart','keydown','scroll'].forEach(evt => {
+        window.addEventListener(evt, async function once() {
+          window.removeEventListener(evt, once);
+          try {
+            await audio.play();
+            hideOverlay();
+          } catch(e) {}
+        }, {passive:true});
+      });
+
+    })();
+  </script>
+</body>
+</html>
